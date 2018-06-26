@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
+import SnackList from './SnackList'
 
 const mapReduxStateToProps = (reduxState) => ({
   reduxState
@@ -36,9 +37,7 @@ class App extends Component {
         <button onClick={this.addSnacks}>Add Snack (NOM NOM)</button>
 
       <ul>
-        {this.props.reduxState.ourReducer.map((snack, i) => {
-          return <li key={i}>{snack}</li>
-        })}
+        <SnackList />
       </ul>
       </div>
     );
